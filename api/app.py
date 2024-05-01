@@ -63,7 +63,9 @@ def write_providers_json(data):
         with open('providers.json', 'w', encoding='utf-8') as json_file:
             json.dump(data, json_file, indent=4, ensure_ascii=False)
 @app.route('/')
-    return jsonify({'status': 'error', 'message': "error page"})
+def index():
+    return redirect('https://www.google.com')
+
 @app.route('/1')
 def index():
     template_list = get_template_list()
