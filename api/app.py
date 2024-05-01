@@ -62,10 +62,10 @@ def write_providers_json(data):
     if not temp_json_data:
         with open('providers.json', 'w', encoding='utf-8') as json_file:
             json.dump(data, json_file, indent=4, ensure_ascii=False)
-            
-@app.route('/')
-def index():
-    return redirect('https://www.google.com')
+
+# @app.route('/')
+# def index():
+    # return redirect('https://www.google.com')
 
 @app.route('/1')
 def index():
