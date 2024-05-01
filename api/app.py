@@ -62,8 +62,9 @@ def write_providers_json(data):
     if not temp_json_data:
         with open('providers.json', 'w', encoding='utf-8') as json_file:
             json.dump(data, json_file, indent=4, ensure_ascii=False)
-
 @app.route('/')
+    return jsonify({'status': 'error', 'message': "error page"})
+@app.route('/1')
 def index():
     template_list = get_template_list()
     template_options = [f"{index + 1}、{template}" for index, template in enumerate(template_list)]
